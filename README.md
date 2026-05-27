@@ -42,7 +42,7 @@ $edgeLength = edge_length(res: 8, unit: H3_LENGTH_UNIT_M); // 461.3546837
 ```bash
 git clone https://github.com/uber/h3.git
 cd h3
-git checkout v4.2.1
+git checkout v4.5.0
 cmake -DBUILD_SHARED_LIBS=ON .
 make -j "$(nproc)"
 sudo make install

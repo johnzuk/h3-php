@@ -7,7 +7,7 @@ h3
 $multiPolygon = \H3\h3_set_to_multi_polygon([
     new \H3\H3Index(0x872830828ffffff),
     new \H3\H3Index(0x87283082effffff),
-    new \H3\H3Index(0x85119643fffffff),
+    new \H3\H3Index(0x871196400ffffff),
 ]);
 
 foreach ($multiPolygon->getPolygons() as $i => $polygon) {

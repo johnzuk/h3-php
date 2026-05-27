@@ -8,7 +8,7 @@ try {
     \H3\h3_set_to_multi_polygon([
         'test1' => new \H3\H3Index(0x872830828ffffff),
         'test2' => new \H3\H3Index(0x87283082effffff),
-        'test3' => new \H3\H3Index(0x85119643fffffff),
+        'test3' => new \H3\H3Index(0x871196400ffffff),
     ]);
     var_dump(true);
 } catch (\Throwable $e) {

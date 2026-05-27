@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 A PHP extension written in C that wraps Uber's [H3](https://github.com/uber/h3) geospatial indexing library (v4.x) in an OOP-style API under the `H3\` namespace. The extension links against the system-installed `libh3` shared library.
 
 - PHP: `^8.1` (CI matrix runs 8.1–8.5)
-- H3 C library: `^4.0` (CI pins `v4.2.1`)
+- H3 C library: `^4.0` (CI pins `v4.5.0`)
 
 ## Build / test / install
 
@@ -87,4 +87,4 @@ Two GitHub Actions workflows in `.github/workflows/`:
 - `build-and-test.yml` — runs on every push; builds H3 from source then the extension, across PHP 8.1–8.5.
 - `release.yml` — triggered by GitHub releases; same matrix on both Linux and macOS, builds artifacts for distribution.
 
-Both pin H3 to `v4.2.1` via matrix variable — bump it there when upgrading the underlying H3 library.
+Both pin H3 to `v4.5.0` via matrix variable — bump it there when upgrading the underlying H3 library.
