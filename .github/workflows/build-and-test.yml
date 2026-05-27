@@ -1,15 +1,16 @@
 on:
-  push:
   pull_request:
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
 
     strategy:
       matrix:
         php: [ '8.1', '8.2', '8.3', '8.4', '8.5' ]
         h3: [ '4.5.0' ]
+        os: [ ubuntu-latest, macos-latest ]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
       - name: Checkout
@@ -22,10 +23,16 @@ jobs:
           ref: v${{ matrix.h3 }}
           path: h3-lib
 
-      - name: Install dependencies
+      - name: Install dependencies (Linux)
+        if: runner.os == 'Linux'
         run: |
           sudo apt-get update
           sudo apt-get install -y cmake make gcc g++
+
+      - name: Install dependencies (macOS)
+        if: runner.os == 'macOS'
+        run: |
+          brew install cmake
 
       - name: Build H3 lib
         working-directory: h3-lib
@@ -33,6 +40,10 @@ jobs:
           cmake -DBUILD_SHARED_LIBS=ON .
           make
           sudo make install
+
+      - name: Fix shared library cache (Linux)
+        if: runner.os == 'Linux'
+        run: sudo ldconfig
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
