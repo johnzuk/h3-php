@@ -2144,7 +2144,8 @@ PHP_GINIT_FUNCTION(h3)
     ZEND_TSRMLS_CACHE_UPDATE();
 #endif
 
-    memset(h3_globals, 0, sizeof(zend_h3_globals));
+    h3_globals->validate_res = 0;
+    h3_globals->validate_index = 0;
 }
 
 // clang-format off
