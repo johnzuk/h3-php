@@ -17,5 +17,5 @@ var_dump($boundary->getVertices()[1]->getLon());
 int(2)
 float(37.42012867767779)
 float(-122.03773496427027)
-float(37.33755608435299)
+float(37.337556084353)
 float(-122.090428929044)

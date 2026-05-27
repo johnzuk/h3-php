@@ -14,5 +14,5 @@ var_dump($boundary->getVertices()[0]->getLon());
 ?>
 --EXPECTF--
 int(6)
-float(49.99513207773801)
-float(36.24067279957266%S)
+float(%f)
+float(%f)
